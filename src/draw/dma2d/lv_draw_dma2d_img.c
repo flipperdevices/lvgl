@@ -105,7 +105,7 @@ void lv_draw_dma2d_opaque_image(lv_draw_task_t * t, void * dest_first_pixel, lv_
 
         conf.bg_address = dest_first_pixel;
         conf.bg_offset = output_offset;
-        conf.bg_cf = output_cf_dma2d;
+        conf.bg_cf = (lv_draw_dma2d_fgbg_cf_t) output_cf_dma2d;
     }
 
     /* Alpha channel should be treated as 0xFF if the cf is XRGB */
@@ -188,7 +188,7 @@ void lv_draw_dma2d_image(lv_draw_task_t * t, void * dest_first_pixel, lv_area_t 
 
         .bg_address = dest_first_pixel,
         .bg_offset = output_offset,
-        .bg_cf = output_cf_dma2d,
+        .bg_cf = (lv_draw_dma2d_fgbg_cf_t) output_cf_dma2d,
     };
 
     /* Alpha channel should be treated as 0xFF if the cf is XRGB */

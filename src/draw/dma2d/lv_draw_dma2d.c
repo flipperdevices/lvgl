@@ -286,6 +286,8 @@ void lv_draw_dma2d_clean_cache(const lv_draw_dma2d_cache_area_t * mem_area)
 
 static int32_t evaluate_cb(lv_draw_unit_t * draw_unit, lv_draw_task_t * task)
 {
+    LV_UNUSED(draw_unit);
+
     switch(task->type) {
         case LV_DRAW_TASK_TYPE_FILL: {
                 lv_draw_fill_dsc_t * dsc = task->draw_dsc;
@@ -431,6 +433,7 @@ static int32_t dispatch_cb(lv_draw_unit_t * draw_unit, lv_layer_t * layer)
 
 static int32_t delete_cb(lv_draw_unit_t * draw_unit)
 {
+    LV_UNUSED(draw_unit);
     return 0;
 }
 
