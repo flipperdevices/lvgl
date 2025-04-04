@@ -362,10 +362,9 @@ static Tvg_Blend_Method lv_blend_to_tvg(lv_vector_blend_t blend)
             return TVG_BLEND_METHOD_SCREEN;
         case LV_VECTOR_BLEND_MULTIPLY:
             return TVG_BLEND_METHOD_MULTIPLY;
-        case LV_VECTOR_BLEND_NONE:
-            return TVG_BLEND_METHOD_SRCOVER;
         case LV_VECTOR_BLEND_ADDITIVE:
             return TVG_BLEND_METHOD_ADD;
+        case LV_VECTOR_BLEND_NONE:
         case LV_VECTOR_BLEND_SRC_IN:
         case LV_VECTOR_BLEND_DST_OVER:
         case LV_VECTOR_BLEND_DST_IN:
