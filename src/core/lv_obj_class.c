@@ -111,6 +111,9 @@ void lv_obj_class_init_obj(lv_obj_t * obj)
     lv_theme_apply(obj);
     lv_obj_construct(obj->class_p, obj);
 
+    /* we need an event here to apply custom styles to widgets */
+    lv_display_send_event(lv_obj_get_display(obj), LV_EVENT_CREATE, obj);
+
     lv_obj_enable_style_refresh(true);
     lv_obj_refresh_style(obj, LV_PART_ANY, LV_STYLE_PROP_ANY);
 
