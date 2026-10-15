@@ -186,6 +186,8 @@ void lv_label_set_text_fmt(lv_obj_t * obj, const char * fmt, ...)
         return;
     }
 
+    lv_label_revert_dots(obj);
+
     if(label->text != NULL && label->static_txt == 0) {
         lv_free(label->text);
         label->text = NULL;
@@ -204,6 +206,8 @@ void lv_label_set_text_static(lv_obj_t * obj, const char * text)
 {
     LV_ASSERT_OBJ(obj, MY_CLASS);
     lv_label_t * label = (lv_label_t *)obj;
+
+    lv_label_revert_dots(obj);
 
     if(label->static_txt == 0 && label->text != NULL) {
         lv_free(label->text);
